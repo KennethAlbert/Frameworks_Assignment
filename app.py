@@ -18,11 +18,11 @@ st.set_page_config(
 def load_data():
     """Load data from metadata_first_10000.csv for analysis"""
     try:
-        df = pd.read_csv("metadata_first_10000.csv")
+        df = pd.read_csv("metadata.csv")
         st.success(f"✅ Loaded {len(df):,} rows from metadata_first_10000.csv")
         return df
     except FileNotFoundError:
-        st.error("❌ metadata_first_10000.csv not found. Please ensure the file exists.")
+        st.error("❌ metadata.csv not found. Please ensure the file exists.")
         return None
     except Exception as e:
         st.error(f"❌ Error loading file: {e}")
@@ -156,4 +156,5 @@ def main():
         st.write("CORD-19 Dataset Explorer - Analyze COVID-19 research metadata")
 
 if __name__ == "__main__":
+
     main()
